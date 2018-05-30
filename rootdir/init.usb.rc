@@ -43,6 +43,9 @@ on property:sys.usb.config=adb && property:sys.usb.configfs=0
     write /sys/class/android_usb/android0/enable 1
     start adbd
     setprop sys.usb.state ${sys.usb.config}
+    # Charm start
+    write /sys/class/android_usb/android0/functions "charm"
+    #Charm end
 
 # USB accessory configuration
 on property:sys.usb.config=accessory && property:sys.usb.configfs=0
